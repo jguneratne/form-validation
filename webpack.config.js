@@ -4,7 +4,7 @@ const HtmlBundlerPlugin = require("html-bundler-webpack-plugin");
 module.exports = {
   stats: { children: true },
   mode: "development",
-  entry: "./src/index.js",
+  entry: "./src/script.js",
   output: {
     path: path.join(__dirname, "dist/"),
     clean: true,
@@ -24,10 +24,10 @@ module.exports = {
     new HtmlBundlerPlugin({
       entry: [
         {
-          import: "./src/views/template.ejs", // template file
+          import: "./src/index.html", // template file
           filename: "index.html", // => dist/index.html
           data: {
-            title: "Webpack Template",
+            title: "Form Validation with JS",
           }, // pass variables into template
         },
       ],
@@ -40,19 +40,6 @@ module.exports = {
       css: {
         // output filename for CSS
         filename: "css/[name].[contenthash:8].css",
-      },
-
-      preprocessor: "ejs",
-
-      preprocessorOptions: {
-        async: false, // defaults 'false'
-        // defaults process.cwd(), root path for includes with an absolute path (e.g., /file.html)
-        root: path.join(__dirname, "src/views"), // defaults process.cwd()
-        // defaults [], an array of paths to use when resolving includes with relative paths
-        views: [
-          "src/partials", // relative path
-          path.join(__dirname, "src/partials"), // absolute path
-        ],
       },
     }),
   ],

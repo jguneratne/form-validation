@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Removed initial-scale and max-width from content attribute to fix zooming problems on mobile -->
+    <title><%= title %></title>
+    <link href="../src/style.css" rel="stylesheet" />
+    <script src="../src/script.js" defer="defer"></script>
+  </head>
+
+  <body>
+    <main class="main main-two">
+      <section class="section contact-tab" id="contact">
+        <div class="form-instructions">
+          <h1 class="heading-instruct" aria-label="Enter Your Information!">
+            Enter Your Information!
+          </h1>
+          <p id="required-text" class="required-text">
+            Required fields are followed by *
+          </p>
+        </div>
+
+        <form action="#" method="POST" id="contact" novalidate>
+          <fieldset>
+            <label for="email">
+              <div class="input-type">
+                Email: <span aria-hidden="true">*</span>
+              </div>
+              <div class="input-box">
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="youremail@email.com"
+                  required
+                  minlength="5"
+                />
+              </div>
+              <span
+                id="emailError"
+                class="emailError"
+                role="alert"
+                tabindex="0"
+                aria-live="polite"
+              ></span>
+            </label>
+
+            <label for="country">
+              <div class="input-type">
+                Country: <span aria-hidden="true">*</span>
+              </div>
+              <div class="input-box">
+                <input
+                  name="country"
+                  id="country"
+                  placeholder="Enter your country of residence."
+                  type="text"
+                  required
+                  minlength="2"
+                ></input>
+              </div>
+              <span
+                id="countryError"
+                class="countryError"
+                role="alert"
+                tabindex="0"
+                aria-live="polite"
+              ></span>
+            </label>
+
+            <label for="zip-code">
+              <div class="input-type">
+                Zip Code: <span aria-hidden="true">*</span>
+              </div>
+              <div class="input-box">
+                <input
+                  name="zip-code"
+                  id="zip-code"
+                  placeholder="Enter your zip code."
+                  type="text"
+                  required
+                  minlength="2"
+                ></input>
+              </div>
+              <span
+                id="zipError"
+                class="zipError"
+                role="alert"
+                tabindex="0"
+                aria-live="polite"
+              ></span>
+            </label>
+
+             <label for="password">
+              <div class="password">
+                Password: <span aria-hidden="true">*</span>
+              </div>
+              <div class="input-box">
+                <input
+                  name="password"
+                  id="password"
+                  placeholder="Enter a password."
+                  type="text"
+                  required
+                  minlength="8"
+                  maxlength="20"
+                ></input>
+              </div>
+              <span
+                id="passwordError"
+                class="passwordError"
+                role="alert"
+                tabindex="0"
+                aria-live="polite"
+              ></span>
+            </label>
+
+                <label for="password">
+              <div class="password">
+                Confirm Password: <span aria-hidden="true">*</span>
+              </div>
+              <div class="input-box">
+                <input
+                  name="password-confirm"
+                  id="password-confirm"
+                  placeholder="Confirm your password."
+                  type="text"
+                  required
+                  minlength="8"
+                  maxlength="20"
+                ></input>
+              </div>
+              <span
+                id="pwConfirmError"
+                class="pwConfirmError"
+                role="alert"
+                tabindex="0"
+                aria-live="polite"
+              ></span>
+            </label>
+
+            <button class="submit-info" type="submit">Submit</button>
+            <span
+              id="submitError"
+              class="submitError"
+              role="alert"
+              tabindex="0"
+              aria-live="polite"
+            ></span>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

@@ -10,14 +10,13 @@
   </head>
 
   <body>
-    <main class="main main-two">
-      <section class="section contact-tab" id="contact">
+    <main class="main">
         <div class="form-instructions">
           <h1 class="heading-instruct" aria-label="Enter Your Information!">
             Enter Your Information!
           </h1>
           <p id="required-text" class="required-text">
-            Required fields are followed by *
+            Required fields are preceeded by *
           </p>
         </div>
 
@@ -25,11 +24,12 @@
           <fieldset>
             <label for="email">
               <div class="input-type">
-                Email: <span aria-hidden="true">*</span>
+                <span aria-hidden="true">*</span> Email: 
               </div>
               <div class="input-box">
                 <input
                   id="email"
+                  class="email"
                   type="email"
                   name="email"
                   placeholder="youremail@email.com"
@@ -48,12 +48,13 @@
 
             <label for="country">
               <div class="input-type">
-                Country: <span aria-hidden="true">*</span>
+                <span aria-hidden="true">*</span> Country: 
               </div>
               <div class="input-box">
                 <input
                   name="country"
                   id="country"
+                  class="country"
                   placeholder="Enter your country of residence."
                   type="text"
                   required
@@ -71,11 +72,12 @@
 
             <label for="zip-code">
               <div class="input-type">
-                Zip Code: <span aria-hidden="true">*</span>
+                <span aria-hidden="true">*</span> Zip Code: 
               </div>
               <div class="input-box">
                 <input
                   name="zip-code"
+                  class="zip-code"
                   id="zip-code"
                   placeholder="Enter your zip code."
                   type="text"
@@ -93,13 +95,14 @@
             </label>
 
              <label for="password">
-              <div class="password">
-                Password: <span aria-hidden="true">*</span>
+              <div class="input-type">
+                <span aria-hidden="true">*</span> Password: 
               </div>
               <div class="input-box">
                 <input
                   name="password"
                   id="password"
+                  class="password"
                   placeholder="Enter a password."
                   type="text"
                   required
@@ -117,13 +120,14 @@
             </label>
 
                 <label for="password">
-              <div class="password">
-                Confirm Password: <span aria-hidden="true">*</span>
+              <div class="input-type">
+                <span aria-hidden="true">*</span> Confirm Password: 
               </div>
               <div class="input-box">
                 <input
                   name="password-confirm"
                   id="password-confirm"
+                  class="password-confirm"
                   placeholder="Confirm your password."
                   type="text"
                   required
@@ -150,7 +154,7 @@
             ></span>
           </fieldset>
         </form>
-      </section>
+      
     </main>
   </body>
 </html>

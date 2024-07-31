@@ -9,31 +9,38 @@
   --light-font-col: #f1ffea;
   --dark-font-col: #254710;
   --input-col: #fffbeb;
+  --input-border-col: rgba(4, 38, 48, 0.8);
   --btn-col: rgba(4, 38, 48, 0.8);
   --btn-hov-col: rgba(255, 251, 235, 0.8);
   --footer-col: #4c7273;
-
-  --cta-btn-color: rgba(255, 251, 235, 0.8);
-  --slider-icon-col: #ebdbbc;
-  --about-box-col: rgba(4, 38, 48, 0.8);
   --error-color: #931b05;
 }
 
 body {
-  min-height: 100vh;
+  height: 100vh;
   background-color: var(--body-col);
 }
 
 .main {
-  height: 100%;
+  min-height: 100%;
   background-color: var(--main-col);
   padding: 1em 0 0 0;
+
+  display: grid;
+  grid-template-rows: auto min-content;
+  grid-template-areas:
+    "main"
+    "footer";
+}
+
+.form-div {
+  grid-area: main;
 }
 
 .form-instructions,
 form {
-  width: 95%;
-  max-width: 40em;
+  width: 90%;
+  max-width: 25em;
   margin: 1em auto;
 }
 
@@ -49,6 +56,7 @@ form {
 fieldset {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1.5em;
   border: 0.1em solid transparent;
   padding: 0.4em;
@@ -57,14 +65,7 @@ fieldset {
 label {
   display: flex;
   flex-direction: column;
-}
-
-.email,
-.country,
-.zip-code,
-.password,
-.password-confirm {
-  background-color: var(--input-col);
+  width: 90%;
 }
 
 .input-type {
@@ -77,10 +78,28 @@ label {
 }
 
 input {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
-  padding: 0.2em;
+  padding: 0.4em;
   border-radius: 0.3em;
+  border: 0.12em solid var(--input-border-col);
+}
+
+.email,
+.country,
+.zip-code,
+.password,
+.password-confirm {
+  background-color: var(--input-col);
+}
+
+.email-error,
+.country-error,
+.zip-error,
+.pw-error,
+.pw-confirm-error {
+  text-align: right;
+  padding-top: 0.2em;
 }
 
 .submit-info {
@@ -88,6 +107,7 @@ input {
   padding: 0.5em 1em;
   margin-top: 2em;
   border-radius: 0.4em;
+  font-size: 1rem;
   background-color: var(--btn-col);
   color: var(--light-font-col);
 }

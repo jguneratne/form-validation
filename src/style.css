@@ -11,13 +11,11 @@
   --input-col: #fffbeb;
   --btn-col: rgba(4, 38, 48, 0.8);
   --btn-hov-col: rgba(255, 251, 235, 0.8);
+  --footer-col: #4c7273;
 
-  --menu-btn-selected: #4c7273;
   --cta-btn-color: rgba(255, 251, 235, 0.8);
   --slider-icon-col: #ebdbbc;
   --about-box-col: rgba(4, 38, 48, 0.8);
-  --dark-font-col: #254710;
-  --light-font-col: #f1ffea;
   --error-color: #931b05;
 }
 
@@ -29,7 +27,7 @@ body {
 .main {
   height: 100%;
   background-color: var(--main-col);
-  padding: 1em 0;
+  padding: 1em 0 0 0;
 }
 
 .form-instructions,
@@ -98,4 +96,39 @@ input {
   cursor: pointer;
   background-color: var(--btn-hov-col);
   color: var(--dark-font-col);
+}
+
+/* Footer */
+
+.footer-div {
+  grid-area: footer;
+  background-color: var(--footer-col);
+  padding: 1ch;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-div p {
+  color: var(--light-font-col);
+}
+
+.footer-div .copyright-div {
+  margin-right: 1em;
+}
+
+.footer-div .logo-div a,
+.footer-div .logo-div a img {
+  width: 3ch;
+  height: 3ch;
+  outline: 0.1em solid transparent;
+  border: 0.1em solid transparent;
+}
+
+.footer-div .logo-div a:focus-visible img {
+  outline: 0.1em solid var(--light-font-col);
+  outline-offset: 0.2em;
+  border: 0.1em solid transparent;
+  border-radius: 0.5em;
 }

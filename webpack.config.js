@@ -63,7 +63,7 @@ module.exports = {
         generator: {
           filename: ({ filename }) => {
             // Keep directory structure for images in dist folder
-            const srcPath = "src/assets/imgs";
+            const srcPath = "src/images";
             const regExp = new RegExp(
               `[\\\\/]?(?:${path.normalize(srcPath)}|node_modules)[\\\\/](.+?)$`
             );

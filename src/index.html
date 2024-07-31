@@ -11,6 +11,7 @@
 
   <body>
     <main class="main">
+      <div class="form-div">
         <div class="form-instructions">
           <h1 class="heading-instruct" aria-label="Enter Your Information!">
             Enter Your Information!
@@ -24,7 +25,7 @@
           <fieldset>
             <label for="email">
               <div class="input-type">
-                <span aria-hidden="true">*</span> Email: 
+                <span aria-hidden="true">*</span> Email:
               </div>
               <div class="input-box">
                 <input
@@ -48,7 +49,7 @@
 
             <label for="country">
               <div class="input-type">
-                <span aria-hidden="true">*</span> Country: 
+                <span aria-hidden="true">*</span> Country:
               </div>
               <div class="input-box">
                 <input
@@ -59,7 +60,7 @@
                   type="text"
                   required
                   minlength="2"
-                ></input>
+                />
               </div>
               <span
                 id="countryError"
@@ -72,7 +73,7 @@
 
             <label for="zip-code">
               <div class="input-type">
-                <span aria-hidden="true">*</span> Zip Code: 
+                <span aria-hidden="true">*</span> Zip Code:
               </div>
               <div class="input-box">
                 <input
@@ -83,7 +84,7 @@
                   type="text"
                   required
                   minlength="2"
-                ></input>
+                />
               </div>
               <span
                 id="zipError"
@@ -94,9 +95,9 @@
               ></span>
             </label>
 
-             <label for="password">
+            <label for="password">
               <div class="input-type">
-                <span aria-hidden="true">*</span> Password: 
+                <span aria-hidden="true">*</span> Password:
               </div>
               <div class="input-box">
                 <input
@@ -108,7 +109,7 @@
                   required
                   minlength="8"
                   maxlength="20"
-                ></input>
+                />
               </div>
               <span
                 id="passwordError"
@@ -119,9 +120,9 @@
               ></span>
             </label>
 
-                <label for="password">
+            <label for="password">
               <div class="input-type">
-                <span aria-hidden="true">*</span> Confirm Password: 
+                <span aria-hidden="true">*</span> Confirm Password:
               </div>
               <div class="input-box">
                 <input
@@ -133,7 +134,7 @@
                   required
                   minlength="8"
                   maxlength="20"
-                ></input>
+                />
               </div>
               <span
                 id="pwConfirmError"
@@ -154,7 +155,27 @@
             ></span>
           </fieldset>
         </form>
-      
+      </div>
+
+      <footer class="footer-div">
+        <div class="copyright-div">
+          <p class="my-copyright">Jenn Guneratne © 2024</p>
+        </div>
+
+        <div class="logo-div">
+          <a
+            href="https://github.com/jguneratne/form-validation"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="../src/images/github-mark.svg"
+              alt="GitHub Logo: Click to visit GitHub repository for this site."
+              class="github-logo"
+            />
+          </a>
+        </div>
+      </footer>
     </main>
   </body>
 </html>

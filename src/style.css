@@ -112,7 +112,7 @@ input:invalid {
 .zip-error,
 .pw-error,
 .pw-confirm-error {
-  text-align: right;
+  text-align: center;
   color: var(--error-color);
   padding-top: 0.2em;
   visibility: hidden;
@@ -121,6 +121,16 @@ input:invalid {
 .country-error {
   width: 90%;
   margin-top: -1.5em;
+}
+
+.email-error:focus,
+.country-error:focus,
+.zip-error:focus,
+.pw-error:focus,
+.pw-confirm-error:focus {
+  border: none;
+  outline: none;
+  text-decoration: underline;
 }
 
 .submit-info {

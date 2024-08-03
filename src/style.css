@@ -5,7 +5,7 @@
   font-family: Arial, Helvetica, sans-serif;
 
   --body-col: #042630;
-  --main-col: #d0d6d6;
+  --main-col: #f0f6f6;
   --light-font-col: #f1ffea;
   --dark-font-col: #254710;
   --input-col: #fffbeb;
@@ -100,6 +100,7 @@ input {
 .pw-confirm-error {
   text-align: right;
   padding-top: 0.2em;
+  visibility: hidden;
 }
 
 .submit-info {

@@ -93,6 +93,18 @@ select {
   padding: 0.4em;
   border-radius: 0.3em;
   border: 0.12em solid var(--input-border-col);
+  outline: 0.12em solid transparent;
+}
+
+input:focus,
+select:focus {
+  outline: 0.12em solid var(--input-border-col);
+}
+
+input:invalid:focus,
+select:invalid:focus {
+  border: 0.12em solid var(--error-color);
+  outline: 0.12em solid var(--error-color);
 }
 
 input:invalid {

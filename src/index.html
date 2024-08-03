@@ -52,25 +52,17 @@
               <div class="input-type">
                 <span aria-hidden="true">*</span> Country:
               </div>
-              <div class="input-box">
-                <input
-                  name="country"
-                  id="country"
-                  class="country"
-                  placeholder="Enter your country of residence."
-                  type="text"
-                  required
-                  minlength="2"
-                />
+              <div class="input-dropdown">
+                <select id="country" name="country" class="country" required>
+                  <option disabled selected value="select">
+                    Select Your Country:
+                  </option>
+                  <option value="ch">Switzerland</option>
+                  <option value="fr">France</option>
+                  <option value="de">Germany</option>
+                  <option value="nl">The Netherlands</option>
+                </select>
               </div>
-              <span
-                id="country-error"
-                class="country-error"
-                role="alert"
-                tabindex="0"
-                aria-live="polite"
-                >Placeholder Text</span
-              >
             </label>
 
             <label for="zip-code">

@@ -68,6 +68,11 @@ label {
   width: 90%;
 }
 
+label[for="country"] {
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
 .input-type {
   margin-bottom: 0.3em;
 }
@@ -77,12 +82,21 @@ label {
   justify-content: center;
 }
 
-input {
+.input-dropdown {
+  margin-left: 4em;
+}
+
+input,
+select {
   width: 100%;
   margin: 0 auto;
   padding: 0.4em;
   border-radius: 0.3em;
   border: 0.12em solid var(--input-border-col);
+}
+
+input:invalid {
+  border: 0.12em solid var(--error-color);
 }
 
 .email,
@@ -99,8 +113,14 @@ input {
 .pw-error,
 .pw-confirm-error {
   text-align: right;
+  color: var(--error-color);
   padding-top: 0.2em;
   visibility: hidden;
+}
+
+.country-error {
+  width: 90%;
+  margin-top: -1.5em;
 }
 
 .submit-info {

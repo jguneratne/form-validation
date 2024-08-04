@@ -126,7 +126,7 @@ input:invalid {
 .pw-confirm-error {
   text-align: center;
   color: var(--error-color);
-  padding-top: 0.2em;
+  padding-top: 0.5em;
   visibility: hidden;
 }
 

@@ -1,6 +1,7 @@
 // Country and Zip Constraints taken from the following documentation: https://developer.mozilla.org/en-US/docs/Web/HTML/Constraint_validation
 const emailInput = document.querySelector(".email");
 const emailError = document.querySelector(".email-error");
+const countryError = document.querySelector(".country-error");
 const zipInput = document.querySelector("#zip-code");
 const zipError = document.querySelector(".zip-error");
 
@@ -27,11 +28,13 @@ function validateEmailInput() {
   });
 }
 
+// Zip Code Check
+
 function zipConstraintFunc() {
   const country = document.getElementById("country").value;
 
   const zipConstraints = {
-    select: [undefined, ""],
+    select: ["/^w+$/", "You must select a country to add a zip code."],
     ch: [
       "^(CH-)?\\d{4}$",
       "Switzerland ZIPs must have exactly 4 digits: e.g. CH-1950 or 1950",
@@ -56,6 +59,12 @@ function zipConstraintFunc() {
   if (constraint.test(zipInput.value)) {
     // The ZIP follows the constraint, we use the ConstraintAPI to tell it
     removeError(zipError);
+  } else if (constraint.test(zipInput.value) === "/^w+$/") {
+    console.log(constraint.test(zipInput.value));
+    showError(zipError);
+    zipError.textContent = zipConstraints[country][0];
+    showError(countryError);
+    countryError.textContent = "Select a country.";
   } else {
     // The ZIP doesn't follow the constraint, we use the ConstraintAPI to
     // give a message about the format required for this country

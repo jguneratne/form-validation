@@ -1,12 +1,14 @@
-// Country and Zip Constraints taken from the following documentation: https://developer.mozilla.org/en-US/docs/Web/HTML/Constraint_validation
-const emailInput = document.querySelector(".email");
-const emailError = document.querySelector(".email-error");
-const countryError = document.querySelector(".country-error");
-const zipInput = document.querySelector("#zip-code");
-const zipError = document.querySelector(".zip-error");
-const password = document.querySelector(".password");
-const passwordError = document.querySelector(".pw-error");
-const passwordConfirm = document.querySelector(".password-confirm");
+import {
+  emailInput,
+  emailError,
+  countryError,
+  zipInput,
+  zipError,
+  pwConstraint,
+  password,
+  passwordError,
+  passwordConfirm,
+} from "./variables";
 
 // Email Check
 function emailErrorFunc() {
@@ -25,7 +27,7 @@ function emailErrorFunc() {
   }
 }
 
-function validateEmailInput() {
+export function validateEmailInput() {
   emailInput.addEventListener("blur", () => {
     emailErrorFunc();
   });
@@ -34,6 +36,8 @@ function validateEmailInput() {
 // Zip Code Check
 
 function zipConstraintFunc() {
+  // Country and Zip Constraints taken from the following documentation: https://developer.mozilla.org/en-US/docs/Web/HTML/Constraint_validation
+
   const country = document.getElementById("country").value;
 
   const zipConstraints = {
@@ -57,17 +61,16 @@ function zipConstraintFunc() {
   };
 
   const constraint = new RegExp(zipConstraints[country][0], "");
-  console.log(constraint);
 
   if (constraint.test(zipInput.value)) {
     // The ZIP follows the constraint, we use the ConstraintAPI to tell it
     removeError(zipError);
   } else if (constraint.test(zipInput.value) === "/^w+$/") {
+    // If the country isn't selected
     console.log(constraint.test(zipInput.value));
     showError(zipError);
     zipError.textContent = zipConstraints[country][0];
     showError(countryError);
-    countryError.textContent = "Select a country.";
   } else {
     // The ZIP doesn't follow the constraint, we use the ConstraintAPI to
     // give a message about the format required for this country
@@ -76,7 +79,7 @@ function zipConstraintFunc() {
   }
 }
 
-function checkZip() {
+export function checkZip() {
   zipInput.addEventListener("blur", () => {
     zipConstraintFunc();
   });
@@ -85,10 +88,6 @@ function checkZip() {
 // Enter Password
 
 function validatePassword() {
-  const pwConstraint = new RegExp(
-    "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\\w\\s]|[_]\\)).{8,15}$"
-  ); // Trying pattern from following forum: https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
-
   if (pwConstraint.test(password.value)) {
     removeError(passwordError);
   } else {
@@ -96,7 +95,7 @@ function validatePassword() {
   }
 }
 
-function checkPassword() {
+export function checkPassword() {
   password.addEventListener("blur", (e) => {
     validatePassword();
   });
@@ -118,11 +117,3 @@ export function removeError(inputError) {
   inputError.textContent = "Valid Field";
   inputError.removeAttribute("aria-live", "polite");
 }
-
-// Run on load
-
-document.addEventListener("DOMContentLoaded", () => {
-  validateEmailInput();
-  checkZip();
-  checkPassword();
-});

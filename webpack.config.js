@@ -4,7 +4,7 @@ const HtmlBundlerPlugin = require("html-bundler-webpack-plugin");
 module.exports = {
   stats: { children: true },
   mode: "development",
-  entry: "./src/script.js",
+  entry: "./src/js/script.js",
   output: {
     path: path.join(__dirname, "dist/"),
     clean: true,

@@ -4,6 +4,9 @@ const emailError = document.querySelector(".email-error");
 const countryError = document.querySelector(".country-error");
 const zipInput = document.querySelector("#zip-code");
 const zipError = document.querySelector(".zip-error");
+const password = document.querySelector(".password");
+const passwordError = document.querySelector(".pw-error");
+const passwordConfirm = document.querySelector(".password-confirm");
 
 // Email Check
 function emailErrorFunc() {
@@ -79,16 +82,40 @@ function checkZip() {
   });
 }
 
+// Enter Password
+
+function validatePassword() {
+  const pwConstraint = new RegExp(
+    "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\\w\\s]|[_]\\)).{8,15}$"
+  ); // Trying pattern from following forum: https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
+
+  if (pwConstraint.test(password.value)) {
+    removeError(passwordError);
+  } else {
+    showError(passwordError);
+  }
+}
+
+function checkPassword() {
+  password.addEventListener("blur", (e) => {
+    validatePassword();
+  });
+}
+
+// Confirm Password
+
+// // function confirmPassword() {}
+
 // Show/Remove Error
 function showError(inputError) {
-  inputError.style.visibility = "visible";
+  inputError.classList.add("invalid");
   inputError.setAttribute("aria-live", "polite");
   inputError.focus();
 }
 
 export function removeError(inputError) {
-  inputError.textContent = "";
-  inputError.style.visibility = "hidden";
+  inputError.classList.add("valid");
+  inputError.textContent = "Valid Field";
   inputError.removeAttribute("aria-live", "polite");
 }
 
@@ -97,4 +124,5 @@ export function removeError(inputError) {
 document.addEventListener("DOMContentLoaded", () => {
   validateEmailInput();
   checkZip();
+  checkPassword();
 });

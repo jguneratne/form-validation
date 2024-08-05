@@ -125,14 +125,35 @@ input:invalid {
 .pw-error,
 .pw-confirm-error {
   text-align: center;
-  color: var(--error-color);
   padding-top: 0.5em;
-  visibility: hidden;
+  margin-bottom: 1em;
 }
 
 .country-error {
   width: 90%;
   margin-top: -1.5em;
+}
+
+.pw-confirm-error {
+  margin-bottom: 0;
+}
+
+.email-error.invalid,
+.country-error.invalid,
+.zip-error.invalid,
+.pw-error.invalid,
+.pw-confirm-error.invalid {
+  color: var(--error-color);
+  font-weight: bold;
+}
+
+.email-error.valid,
+.country-error.valid,
+.zip-error.valid,
+.pw-error.valid,
+.pw-confirm-error.valid {
+  color: var(--footer-color);
+  font-weight: bold;
 }
 
 .email-error:focus,

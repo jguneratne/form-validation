@@ -8,6 +8,7 @@ import {
   password,
   passwordError,
   passwordConfirm,
+  passwordConfirmError,
 } from "./variables";
 
 // Email Check
@@ -103,7 +104,20 @@ export function checkPassword() {
 
 // Confirm Password
 
-// // function confirmPassword() {}
+function confirmPassword() {
+  if (password.value === passwordConfirm.value) {
+    removeError(passwordConfirmError);
+  } else {
+    showError(passwordConfirmError);
+    passwordConfirmError.textContent = "Password fields do not match.";
+  }
+}
+
+export function checkPasswordConfirm() {
+  passwordConfirm.addEventListener("blur", (e) => {
+    confirmPassword();
+  });
+}
 
 // Show/Remove Error
 function showError(inputError) {

@@ -163,7 +163,7 @@ input:invalid {
 .zip-error:focus,
 .pw-error:focus,
 .pw-confirm-error:focus,
-.submit-error.focus {
+.submit-error:focus {
   border: none;
   outline: none;
   text-decoration: underline;

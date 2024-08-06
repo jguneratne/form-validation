@@ -1,6 +1,7 @@
 import {
   emailInput,
   emailError,
+  countryDropdown,
   countryError,
   zipInput,
   zipError,
@@ -90,6 +91,23 @@ export function checkZip() {
   });
 }
 
+// Country Check
+function validateCountry() {
+  countryDropdown.setAttribute("required", "true");
+
+  if (countryDropdown.value === "select") {
+    showError(countryError);
+  } else {
+    removeError(countryError);
+  }
+}
+
+export function checkCountry() {
+  countryDropdown.addEventListener("blur", () => {
+    validateCountry();
+  });
+}
+
 // Enter Password
 
 function validatePassword() {
@@ -103,7 +121,7 @@ function validatePassword() {
 }
 
 export function checkPassword() {
-  password.addEventListener("blur", (e) => {
+  password.addEventListener("blur", () => {
     validatePassword();
   });
 }
@@ -129,7 +147,7 @@ function confirmPassword() {
 }
 
 export function checkPasswordConfirm() {
-  passwordConfirm.addEventListener("blur", (e) => {
+  passwordConfirm.addEventListener("blur", () => {
     confirmPassword();
   });
 }
@@ -141,6 +159,7 @@ export function validateOnSubmit() {
     e.preventDefault();
     emailErrorFunc();
     zipConstraintFunc();
+    validateCountry();
     validatePassword();
     confirmPassword();
     if (

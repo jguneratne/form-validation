@@ -1,6 +1,7 @@
 // DOM Elements
 export const emailInput = document.querySelector(".email");
 export const emailError = document.querySelector(".email-error");
+export const countryDropdown = document.querySelector(".country");
 export const countryError = document.querySelector(".country-error");
 export const zipInput = document.querySelector("#zip-code");
 export const zipError = document.querySelector(".zip-error");

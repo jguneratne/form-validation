@@ -1,6 +1,7 @@
 import {
   validateEmailInput,
   checkZip,
+  checkCountry,
   checkPassword,
   checkPasswordConfirm,
   validateOnSubmit,
@@ -10,6 +11,7 @@ import {
 document.addEventListener("DOMContentLoaded", () => {
   validateEmailInput();
   checkZip();
+  checkCountry();
   checkPassword();
   checkPasswordConfirm();
   validateOnSubmit();

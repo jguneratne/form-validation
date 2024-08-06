@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Removed initial-scale and max-width from content attribute to fix zooming problems on mobile -->
+    <title>Form Validation with JS</title>
+    <link href="css/style.aaba6425.css" rel="stylesheet" />
+    <script src="js/script.dbee8ae3.js" defer="defer"></script>
+  </head>
+
+  <body>
+    <main class="main">
+      <div class="form-div">
+        <div class="form-instructions">
+          <h1 class="heading-instruct" aria-label="Enter Your Information!">
+            Enter Your Information!
+          </h1>
+          <p id="required-text" class="required-text">
+            Required fields are preceeded by *
+          </p>
+        </div>
+
+        <form action="#" method="POST" id="contact" novalidate>
+          <fieldset>
+            <label for="email">
+              <div class="input-type">
+                <span aria-hidden="true">*</span> Email:
+              </div>
+              <div class="input-box">
+                <input
+                  id="email"
+                  class="email"
+                  type="email"
+                  name="email"
+                  placeholder="youremail@email.com"
+                  minlength="6"
+                />
+              </div>
+              <span
+                id="email-error"
+                class="email-error"
+                role="alert"
+                tabindex="0"
+                >Enter email using format youremail@email.com</span
+              >
+            </label>
+
+            <label for="country">
+              <div class="input-type">
+                <span aria-hidden="true">*</span> Country:
+              </div>
+              <div class="input-dropdown">
+                <select id="country" name="country" class="country">
+                  <option disabled selected value="select">
+                    Select Your Country:
+                  </option>
+                  <option value="ch">Switzerland</option>
+                  <option value="fr">France</option>
+                  <option value="de">Germany</option>
+                  <option value="nl">The Netherlands</option>
+                </select>
+              </div>
+            </label>
+            <span
+              id="country-error"
+              class="country-error"
+              role="alert"
+              tabindex="0"
+              >Please select your country.</span
+            >
+
+            <label for="zip-code">
+              <div class="input-type">
+                <span aria-hidden="true">*</span> Zip Code:
+              </div>
+              <div class="input-box">
+                <input
+                  name="zip-code"
+                  class="zip-code"
+                  id="zip-code"
+                  placeholder="Enter your zip code."
+                  type="text"
+                  minlength="2"
+                />
+              </div>
+              <span id="zip-error" class="zip-error" role="alert" tabindex="0"
+                >Enter your Zip code.</span
+              >
+            </label>
+
+            <label for="password">
+              <div class="input-type">
+                <span aria-hidden="true">*</span> Password:
+              </div>
+              <div class="input-box">
+                <input
+                  name="password"
+                  id="password"
+                  class="password"
+                  placeholder="Enter a password."
+                  type="password"
+                  minlength="8"
+                  maxlength="20"
+                />
+              </div>
+              <span id="pw-error" class="pw-error" role="alert" tabindex="0"
+                >Enter 8-15 characters with at least one lowercase letter, one
+                uppercase letter, one number and one special character.
+              </span>
+            </label>
+
+            <label for="password-confirm">
+              <div class="input-type">
+                <span aria-hidden="true">*</span> Confirm Password:
+              </div>
+              <div class="input-box">
+                <input
+                  name="password-confirm"
+                  id="password-confirm"
+                  class="password-confirm"
+                  placeholder="Confirm your password."
+                  type="password"
+                  minlength="8"
+                  maxlength="20"
+                />
+              </div>
+              <span
+                id="pw-eonfirm-error"
+                class="pw-confirm-error"
+                role="alert"
+                tabindex="0"
+                >Please confirm your password.</span
+              >
+            </label>
+
+            <button class="submit-info" type="submit">Submit</button>
+            <span
+              id="submit-errorr"
+              class="submit-error"
+              role="alert"
+              tabindex="0"
+            ></span>
+          </fieldset>
+        </form>
+      </div>
+
+      <footer class="footer-div">
+        <div class="copyright-div">
+          <p class="my-copyright">Jenn Guneratne © 2024</p>
+        </div>
+
+        <div class="logo-div">
+          <a
+            href="https://github.com/jguneratne/form-validation"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="images/github-mark.046b321d.svg"
+              alt="GitHub Logo: Click to visit GitHub repository for this site."
+              class="github-logo"
+            />
+          </a>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -142,7 +142,8 @@ input:invalid {
 .country-error.invalid,
 .zip-error.invalid,
 .pw-error.invalid,
-.pw-confirm-error.invalid {
+.pw-confirm-error.invalid,
+.submit-error.invalid {
   color: var(--error-color);
   font-weight: bold;
 }
@@ -151,7 +152,8 @@ input:invalid {
 .country-error.valid,
 .zip-error.valid,
 .pw-error.valid,
-.pw-confirm-error.valid {
+.pw-confirm-error.valid,
+.submit-error.valid {
   color: var(--footer-color);
   font-weight: bold;
 }
@@ -160,7 +162,8 @@ input:invalid {
 .country-error:focus,
 .zip-error:focus,
 .pw-error:focus,
-.pw-confirm-error:focus {
+.pw-confirm-error:focus,
+.submit-error.focus {
   border: none;
   outline: none;
   text-decoration: underline;
@@ -180,6 +183,10 @@ input:invalid {
   cursor: pointer;
   background-color: var(--btn-hov-col);
   color: var(--dark-font-col);
+}
+
+.submit-error {
+  margin-bottom: 1em;
 }
 
 /* Footer */

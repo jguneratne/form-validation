@@ -8,6 +8,8 @@ export const password = document.querySelector(".password");
 export const passwordError = document.querySelector(".pw-error");
 export const passwordConfirm = document.querySelector(".password-confirm");
 export const passwordConfirmError = document.querySelector(".pw-confirm-error");
+export const form = document.querySelector("form");
+export const submitError = document.querySelector(".submit-error");
 
 // Country and Zip Constraints taken from the following documentation: https://developer.mozilla.org/en-US/docs/Web/HTML/Constraint_validation
 

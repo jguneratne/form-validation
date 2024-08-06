@@ -3,6 +3,7 @@ import {
   checkZip,
   checkPassword,
   checkPasswordConfirm,
+  validateOnSubmit,
 } from "./form-validation.js";
 
 // Run on load
@@ -11,4 +12,5 @@ document.addEventListener("DOMContentLoaded", () => {
   checkZip();
   checkPassword();
   checkPasswordConfirm();
+  validateOnSubmit();
 });

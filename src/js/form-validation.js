@@ -9,6 +9,8 @@ import {
   passwordError,
   passwordConfirm,
   passwordConfirmError,
+  form,
+  submitError,
 } from "./variables";
 
 // Email Check
@@ -37,8 +39,9 @@ export function validateEmailInput() {
 // Zip Code Check
 
 function zipConstraintFunc() {
-  // Country and Zip Constraints taken from the following documentation: https://developer.mozilla.org/en-US/docs/Web/HTML/Constraint_validation
+  zipInput.setAttribute("required", "true");
 
+  // Country and Zip Constraints taken from the following documentation: https://developer.mozilla.org/en-US/docs/Web/HTML/Constraint_validation
   const country = document.getElementById("country").value;
 
   const zipConstraints = {
@@ -83,12 +86,15 @@ function zipConstraintFunc() {
 export function checkZip() {
   zipInput.addEventListener("blur", () => {
     zipConstraintFunc();
+    zipConstraintFunc;
   });
 }
 
 // Enter Password
 
 function validatePassword() {
+  password.setAttribute("required", "true");
+
   if (pwConstraint.test(password.value)) {
     removeError(passwordError);
   } else {
@@ -105,17 +111,50 @@ export function checkPassword() {
 // Confirm Password
 
 function confirmPassword() {
-  if (password.value === passwordConfirm.value) {
-    removeError(passwordConfirmError);
-  } else {
+  passwordConfirm.setAttribute("required", "true");
+
+  if (
+    passwordConfirm.value === "" ||
+    passwordConfirm.value === null ||
+    passwordConfirm.value === undefined
+  ) {
+    showError(passwordConfirmError);
+    passwordConfirmError.textContent = "Password fields must not be blank.";
+  } else if (passwordConfirm.value !== password.value) {
     showError(passwordConfirmError);
     passwordConfirmError.textContent = "Password fields do not match.";
+  } else if (passwordConfirm.value === password.value) {
+    removeError(passwordConfirmError);
   }
 }
 
 export function checkPasswordConfirm() {
   passwordConfirm.addEventListener("blur", (e) => {
     confirmPassword();
+  });
+}
+
+// Submit Validation
+
+export function validateOnSubmit() {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    emailErrorFunc();
+    zipConstraintFunc();
+    validatePassword();
+    confirmPassword();
+    if (
+      !emailInput.validity.valid ||
+      !zipInput.validity.valid ||
+      !password.validity.valid ||
+      !passwordConfirm.validity.valid
+    ) {
+      showError(submitError);
+      submitError.textContent = "Please review all fields before submission";
+    } else {
+      removeError(submitError);
+      submitError.textContent = "High Five! You entered all fields correctly.";
+    }
   });
 }
 
